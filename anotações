@@ -1,0 +1,2 @@
+header>div+nav>ul>li*5
+   ou - header>div+(nav>ul>li*5)+button
