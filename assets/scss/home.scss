@@ -1,6 +1,7 @@
 /*escrever bastante código css aqui*/
 
 header {
+    transition-duration: 0.5s;
     position: fixed;
     top: 0;
     z-index: 10;
@@ -47,7 +48,7 @@ section.full-banner {
         left: 15%;
         > h1 {
             font-weight: 300;
-            font-size: 4rem;
+            font-size: 3rem;
             margin: 0;
             line-height: 1em;
             margin-bottom: 20px;
@@ -74,12 +75,12 @@ section.full-banner {
     color: #242424;
 }
 
-.button-disable {
+button.disabled {
     background: none;
     border: solid 0.5px rgba(36,36,36,0.8);
 }
-.button-disable:hover{
-    background: rgba(36,36,36,0.8);
+button.disabled:hover{
+    background: rgba(36,36,36,0.2);
 }
 button {
     background: linear-gradient(150deg, #ffe45c 0%, #ffc900 100%);
