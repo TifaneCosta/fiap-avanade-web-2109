@@ -1,10 +1,13 @@
 .full-banner-form {
+    
     width: 100%;
-    height: calc(100vh - 100px);
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #dddcda;
+    background: url(../images/c6Bank/hero-bg.webp);
+    background-size: cover;
+    
 
     .container-login {
         width: 420px;
@@ -22,6 +25,7 @@
                 flex-direction: column;
                 input {
                     width: 100%;
+                    border:3em;
                 }
             }
             P { margin: 0;}
