@@ -33,12 +33,12 @@ function escreve (titulo){
 
 
 //função nominal - sofre hoisting
-function mudaTitulo(novoTitulo){
-    document.querySelector('h1').innerHTML = novoTitulo;
+//function mudaTitulo(novoTitulo){
+ //   document.querySelector('h1').innerHTML = novoTitulo;
 
-}
+//}
 
-mudaTitulo('Vai Corinthians');
+//mudaTitulo('Vai Corinthians');
 
 //escopo, orientação a objetos
 
@@ -48,11 +48,11 @@ mudaTitulo('Vai Corinthians');
 //função anônima
 //função anonima precisa de um contexto
 
-const mudaTitulo2 = function(novoTitulo) {
-    document.querySelector('h2').innerHTML = novoTitulo;
+const mudaTitulo2 = function(target, novoTitulo) {
+    document.querySelector(target).innerHTML = novoTitulo;
 }
 
-mudaTitulo2('Trocando o subtitulo');
+mudaTitulo2('h1', 'Trocando o titulo');
 
 
 //arrow funtions- é uma função criada no ES6 ou ES2015
@@ -61,8 +61,26 @@ mudaTitulo2('Trocando o subtitulo');
 //sintaxe mais simples e prática
 const relogio = () =>{
     const date = new Date();
-    mudaTitulo2(date.toLocaleTimeString());
+    mudaTitulo2('h2', date.toLocaleTimeString());
 }
 
 setInterval(relogio, 1000);
+
+//sintaxe: setInterval(() => {}, tempo);
+
+const frases = ["A vida é bela", "A vida é curta", "A vida é uma dádiva"];
+
+const mudaFrase = (target, frases, tempo) =>{
+
+let total = 2;
+    setInterval(()=>{
+        document.querySelector(target).innerHTML = frases[total >= frases.length - 1? (total =0) : (total += 1)];
+
+    }, tempo * 1000);
+}
+
+mudaFrase("h1", frases, 4);
+
+//operador tenário
+//função math.
 
