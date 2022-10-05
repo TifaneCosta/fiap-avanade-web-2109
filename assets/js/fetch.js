@@ -1,5 +1,14 @@
-const cep = document.querySelector('#cep');
+const cep = document.querySelector("#cep");
 
+const showData = (result) =>{
+    //forEach para arrays
+    //for in
+    for(const campo in result){
+        if(document.querySelector('#' + campo)){
+            document.querySelector('#' + campo).value = result[campo];
+            }
+        }
+}
 
 cep.addEventListener('blur', async (e)=>{
     let search = cep.value.replace('-','');
@@ -16,16 +25,17 @@ cep.addEventListener('blur', async (e)=>{
     cahce: 'default',
    };
 //toda função que é assíncrona tem que começar com async
-
+try {
 const resultado = await fetch(
     `https://viacep.com.br/ws/${search}/json/`, 
     options
 );
 
 const json = await resultado.json();
-console.log(json);
-
-
+showData(json);
+} catch (error) {
+    console.log('Temos um problema', error.message);
+}
 });
 
    /*fetch(`https://viacep.com.br/ws/${search}/json/`, options)
@@ -61,3 +71,11 @@ console.log(json);
 
 
 
+
+
+
+
+//conteudo da prova
+//array
+//eventos
+//DOM - queryselector
